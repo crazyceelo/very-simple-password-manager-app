@@ -4,4 +4,28 @@ window.iAmJavascriptES6 = iAmJavascriptES6;
 
 import style from './main.css';
 
-import App from './App';
+// import App from './App';
+
+// impoort routing packages
+import React from 'react';
+import { ConnectedRouter as Router } from 'react-router-redux';
+import { Provider } from 'react-redux';
+import { render } from 'react-dom';
+
+// import files
+import history from './routedViews/history';
+import RoutedViews from './routedViews/routes';
+import store from './store';
+
+render(
+  <Provider store={store}>
+    <Router history={history}>
+      <RoutedViews />
+    </Router>
+  </Provider>
+  , window.document.getElementById('app'));
+)
+
+if (module.hot) {
+  module.hot.accept();
+}
