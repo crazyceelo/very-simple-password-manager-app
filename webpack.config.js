@@ -4,9 +4,8 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
-// const SRC_DIR = path.resolve(__dirname, 'src');
-
 module.exports = {
+  entry: ['babel-polyfill', './src/index.js'],
   module: {
     rules: [
       {
@@ -39,6 +38,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css'
-    })
-  ]
+    }),
+  ],
+  devtool: 'source-map'
 };

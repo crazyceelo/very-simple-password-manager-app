@@ -6,11 +6,13 @@ import style from './main.css';
 
 // import App from './App';
 
-// impoort routing packages
+// import routing packages
 import React from 'react';
 import { ConnectedRouter as Router } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import { render } from 'react-dom';
+// require('babel-core/register');
+// require('babel-polyfill');
 
 // import files
 import history from './routedViews/history';
