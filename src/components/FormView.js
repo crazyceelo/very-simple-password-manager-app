@@ -53,6 +53,14 @@ const FormView = props => {
               placeholder="www.abc.com"
             />  
           </div>
+          <div className="col-12">
+            <button className="col-6" type="submit" disabled={pristine || submitting}>
+              Submit
+            </button>
+            <button className="col-6" type="button" disabled={pristine || submitting} onClick={reset}>
+              Clear values  
+            </button>
+          </div>
         </div>
       </form>
     </div>
