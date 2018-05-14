@@ -12,7 +12,7 @@ import PasswordListView from './components/PasswordListView';
 
 const App = () => {
   return (
-    <div className='container'>
+    <div className='container-fluid'>
       <Provider store={store}>  
         <Router history={history}>  
           <PasswordListView />
