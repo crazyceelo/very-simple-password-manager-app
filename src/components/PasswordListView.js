@@ -17,10 +17,14 @@ import {
 
 class PasswordListView extends React.Component {
   render() {
+    const showResults = () => {
+      console.log('test');
+    }
+    
     return (
       <div>
         {/* <p>tes asdf t</p> */}
-        <FormView />
+        <FormView onSubmit={showResults}/>
       </div>
     );
   }
