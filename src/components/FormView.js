@@ -10,66 +10,32 @@ import { Field, reduxForm } from 'redux-form';
 const FormView = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
-    <div >
-      <form onSubmit={handleSubmit}>
-        <div className="row">  
-          <label className="col-1">Site:</label>
-          <div className="col-11">
-            <Field
-              className="col-11"  
-              name="site"
-              component="input"
-              type="text"
-              placeholder="facebook"
-            />  
-          </div>
-          <label className="col-1">Name:</label>
-          <div className="col-11">
-            <Field
-              className="col-11"  
-              name="name"
-              component="input"
-              type="text"
-              placeholder="asdf@gmail.com"
-            />  
-          </div>
-          <label className="col-1">Pass:</label>
-          <div className="col-11">
-            <Field
-              className="col-11"  
-              name="pass"
-              component="input"
-              type="text"
-              placeholder="password"
-            />  
-          </div>
-          <label className="col-1">URL:</label>
-          <div className="col-11">
-            <Field
-              className="col-11"  
-              name="url"
-              component="input"
-              type="text"
-              placeholder="www.abc.com"
-            />  
-          </div>
-          <div className="col-12">
-            <button className="col-6" type="submit" disabled={pristine || submitting}>
-              Submit
-            </button>
-            <button className="col-6" type="button" disabled={pristine || submitting} onClick={reset}>
-              Clear values  
-            </button>
-          </div>
+    <form onSubmit={handleSubmit}>
+      <div className="row">  
+        <label className="col-1">Site:</label>
+        <div>
+          <Field
+            className="col-11"  
+            name="site"
+            component="input"
+            type="text"
+            placeholder="facebook"
+          />
         </div>
-      </form>
-    </div>
+        <div>
+          <button type="submit" disabled={pristine || submitting}>Submit</button>
+          <button type="button" disabled={pristine || submitting} onClick={reset}>
+            Clear Values
+          </button>
+        </div> 
+      </div>
+    </form>
   )
 }
 
 export default reduxForm({
   form: 'simple' // unique identifier for this form
-})(FormView)
+})(FormView);
 
 
 // class FormView extends React.Component {

@@ -6,6 +6,7 @@ import {
   compose,
   createStore
 } from 'redux';
+import { reducer as reduxFormReducer } from 'redux-form';
 
 import createSagaMiddleware from 'redux-saga';
 import { routerMiddleware } from 'react-router-redux';
@@ -18,7 +19,8 @@ const initRouterMiddleware = routerMiddleware(history);
 const initSagaMiddleware = createSagaMiddleware();
 
 const combinedReducers = combineReducers({
-...reducers
+  ...reducers,
+  form: reduxFormReducer  
 });
 
 const middleware = applyMiddleware(initSagaMiddleware, initRouterMiddleware);
@@ -36,3 +38,4 @@ const store = createStore(combinedReducers, composeEnhancers(middleware));
 initSagaMiddleware.run(sagas);
 
 export default store;
+
