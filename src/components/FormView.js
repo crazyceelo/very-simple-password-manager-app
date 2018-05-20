@@ -12,14 +12,44 @@ const FormView = props => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="row">  
-        <label className="col-1">Site:</label>
-        <div>
+        <label className="col-1">App:</label>
+        <div className="col-11">
+          <Field
+            className="col-11"  
+            name="appName"
+            component="input"
+            type="text"
+            placeholder="facebook"
+          />
+        </div>
+        <label className="col-1">Name:</label>
+        <div className="col-11">
+          <Field
+            className="col-11"  
+            name="userName"
+            component="input"
+            type="text"
+            placeholder="jimmy231"
+          />
+        </div>
+        <label className="col-1">Password:</label>
+        <div className="col-11">
+          <Field
+            className="col-11"  
+            name="password"
+            component="input"
+            type="text"
+            placeholder="password123"
+          />
+        </div>
+        <label className="col-1">URL:</label>
+        <div className="col-11">
           <Field
             className="col-11"  
             name="site"
             component="input"
             type="text"
-            placeholder="facebook"
+            placeholder="www.facebook.com"
           />
         </div>
         <div>

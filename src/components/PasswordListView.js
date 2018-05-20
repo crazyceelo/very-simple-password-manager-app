@@ -20,10 +20,9 @@ class PasswordListView extends React.Component {
     const showResults = () => {
       console.log('test');
     }
-    
+
     return (
       <div>
-        {/* <p>tes asdf t</p> */}
         <FormView onSubmit={showResults}/>
       </div>
     );
