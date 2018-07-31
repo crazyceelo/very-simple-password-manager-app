@@ -19,25 +19,23 @@ import {
 
 class PasswordListView extends React.Component {
   render() {
-    const showResults = async (test) => {
+    const handleSubmit = async (body) => {
+      // console.log(body);
+      let test = await fetch(`${publicAPIsURL}/post`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
+          'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+          },
+        body: JSON.stringify(body)
+      });
       console.log(test);
-      try {
-        return await fetch(`${publicAPIsURL}/post`, {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
-            'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
-            },
-          body: test
-        });
-      } catch (err) {
-        throw err;
-      }
+      return test;
     }
 
     return (
       <div>
-        <FormView onSubmit={showResults}/>
+        <FormView onSubmit={handleSubmit}/>
       </div>
     );
   }

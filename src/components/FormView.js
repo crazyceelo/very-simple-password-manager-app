@@ -3,6 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 
 // may need to import a LINKS const
 // here
@@ -68,13 +69,13 @@ export default reduxForm({
 })(FormView);
 
 
-// class FormView extends React.Component {
-//   render() {
-//     return (
-//       <div className="row">
-//       </div>
-//     )
-//   }
-// }
+// let initializeFromStateForm = reduxForm({
+//   form: 'simple' // unique identifier for this form
+// })(FormView);
 
-// export default FormView;
+// InitializeFromStateForm = connect(
+//   (state, ownProps) => ({
+//     initialValues: ownProps.initialValues
+//   }))(InitializeFromStateForm);
+
+// export default InitializeFromStateForm;
